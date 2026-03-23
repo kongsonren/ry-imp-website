@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 日银微电子（深圳）有限公司</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #4A90D9;
+            --dark-blue: #1a3a5c;
+            --light-blue: #f0f8ff;
+            --accent-blue: #2E6CB5;
+            --white: #FFFFFF;
+            --gray-text: #333333;
+            --border-color: #d9e4f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--white);
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        /* Top Navigation Bar */
+        .navbar {
+            background: linear-gradient(180deg, #5FA4EB 0%, #4A90D9 100%);
+            padding: 0.8rem 3%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 3px solid var(--accent-blue);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.8rem 1.5rem;
+            display: block;
+            transition: background 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-menu li:not(:last-child) {
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Logo Area */
+        .logo-section {
+            background: var(--white);
+            padding: 1.5rem 3%;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            color: var(--accent-blue);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .logo-subtitle {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        /* Page Banner */
+        .page-banner {
+            background: linear-gradient(135deg, #6BB6FF 0%, #4A90D9 50%, #2E6CB5 100%);
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><circle cx="50" cy="50" r="20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.3;
+        }
+
+        .page-banner-content {
+            text-align: center;
+            z-index: 1;
+            color: var(--white);
+            padding: 20px;
+        }
+
+        .page-banner-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        .contact-info h2 {
+            color: var(--accent-blue);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            color: var(--accent-blue);
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Map Placeholder */
+        .map-section {
+            background: var(--light-blue);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .map-section h2 {
+            color: var(--accent-blue);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .map-placeholder {
+            background: #e8f0f8;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed var(--primary-blue);
+        }
+
+        .map-placeholder span {
+            color: #999;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Form */
+        .contact-form-section {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-form-section h2 {
+            color: var(--accent-blue);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--accent-blue);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(180deg, #5FA4EB 0%, #4A90D9 100%);
+            color: var(--white);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 144, 217, 0.3);
+        }
+
+        /* Sales Network */
+        .sales-network {
+            background: var(--light-blue);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .sales-network h2 {
+            color: var(--accent-blue);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
+        .network-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .network-item {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .network-item h4 {
+            color: var(--accent-blue);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .network-item p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        /* Back Link */
+        .back-link {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .back-link a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            padding: 10px 30px;
+            border: 1px solid var(--primary-blue);
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .back-link a:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 30px 3%;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .footer-section h4 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .network-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li><a href="index.html">返回首页</a></li>
+            <li><a href="products.html">产品中心</a></li>
+            <li><a href="news.html">新闻中心</a></li>
+            <li><a href="support.html">技术支持</a></li>
+            <li><a href="hr.html">人力资源</a></li>
+            <li><a href="sales.html">销售中心</a></li>
+            <li><a href="quality.html">质量保证</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- Logo Section -->
+    <div class="logo-section">
+        <div class="logo-container">
+            <div class="logo">
+                <h1>日银微电子（深圳）有限公司</h1>
+                <p class="logo-subtitle">专业模拟集成电路设计与制造商</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Banner -->
+    <div class="page-banner">
+        <div class="page-banner-content">
+            <h1>联系我们</h1>
+            <p>期待您的垂询，我们将竭诚为您服务</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <h2>联系方式</h2>
+
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                    <h4>公司地址</h4>
+                    <p>深圳市南山区粤海街道高新区社区粤兴三道 9 号华中科技大学深圳产学研基地大楼 A 座 1136</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div>
+                    <h4>联系电话</h4>
+                    <p>0755-82782695</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">📠</div>
+                <div>
+                    <h4>传真</h4>
+                    <p>0755-82782695</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div>
+                    <h4>电子邮箱</h4>
+                    <p>info@ry-imp.com</p>
+                    <p>sales@ry-imp.com（销售）</p>
+                    <p>support@ry-imp.com（技术支持）</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">🕐</div>
+                <div>
+                    <h4>营业时间</h4>
+                    <p>周一至周五：9:00 - 18:00</p>
+                    <p>周六：9:00 - 12:00</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map -->
+        <div class="map-section">
+            <h2>公司位置</h2>
+            <div class="map-placeholder">
+                <span> 地图加载中...</span>
+            </div>
+            <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">
+                深圳市南山区粤海街道高新区社区粤兴三道 9 号
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <div class="contact-form-section">
+            <h2>在线留言</h2>
+            <form>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>姓名 *</label>
+                        <input type="text" placeholder="请输入您的姓名" required>
+                    </div>
+                    <div class="form-group">
+                        <label>公司名称</label>
+                        <input type="text" placeholder="请输入公司名称">
+                    </div>
+                    <div class="form-group">
+                        <label>联系电话 *</label>
+                        <input type="tel" placeholder="请输入联系电话" required>
+                    </div>
+                    <div class="form-group">
+                        <label>电子邮箱 *</label>
+                        <input type="email" placeholder="请输入电子邮箱" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>所在城市</label>
+                        <input type="text" placeholder="请输入所在城市">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>咨询产品</label>
+                        <select>
+                            <option value="">请选择产品类别</option>
+                            <option value="power">电源管理 IC</option>
+                            <option value="data">数据通讯接口</option>
+                            <option value="audio">音频功放</option>
+                            <option value="led">LED 驱动</option>
+                            <option value="gate">栅极驱动</option>
+                            <option value="motor">电机驱动</option>
+                            <option value="other">其他</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>留言内容 *</label>
+                        <textarea placeholder="请输入您的具体需求或问题..." rows="6" required></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <button type="submit" class="submit-btn">提交留言</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sales Network -->
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <div class="sales-network">
+            <h2>销售网络</h2>
+            <div class="network-grid">
+                <div class="network-item">
+                    <h4>🏢 深圳总部</h4>
+                    <p>地址：深圳市南山区粤海街道高新区社区粤兴三道 9 号华中科技大学深圳产学研基地大楼 A 座 1136</p>
+                    <p>电话：0755-82782695</p>
+                    <p>邮箱：info@ry-imp.com</p>
+                </div>
+                <div class="network-item">
+                    <h4>🏢 宁波分公司</h4>
+                    <p>地址：宁波市科技园区 XX 路 XX 号</p>
+                    <p>电话：+86-574-XXXXXXXX</p>
+                    <p>邮箱：ningbo@ry-imp.com</p>
+                </div>
+                <div class="network-item">
+                    <h4>🏢 上海办事处</h4>
+                    <p>地址：上海市浦东新区 XX 路 XX 号</p>
+                    <p>电话：+86-21-XXXXXXXX</p>
+                    <p>邮箱：shanghai@ry-imp.com</p>
+                </div>
+                <div class="network-item">
+                    <h4>🏢 北京办事处</h4>
+                    <p>地址：北京市海淀区 XX 路 XX 号</p>
+                    <p>电话：+86-10-XXXXXXXX</p>
+                    <p>邮箱：beijing@ry-imp.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back Link -->
+    <div class="back-link">
+        <a href="index.html">← 返回首页</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <p>地址：深圳市南山区粤海街道高新区社区粤兴三道 9 号华中科技大学深圳产学研基地大楼 A 座 1136</p>
+                <p>电话：0755-82782695</p>
+                <p>邮箱：info@ry-imp.com</p>
+                <p>统一社会信用代码：91440300MAK64NHA3Q</p>
+            </div>
+            <div class="footer-section">
+                <h4>产品中心</h4>
+                <p><a href="products.html">电源管理 IC</a></p>
+                <p><a href="products.html">数据通讯接口</a></p>
+                <p><a href="products.html">音频功放</a></p>
+                <p><a href="products.html">栅极驱动</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>关于我们</h4>
+                <p>日银微电子（深圳）有限公司是专业的模拟集成电路设计与制造商，专注于为客户提供高性能、低功耗的芯片产品与解决方案。</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 日银微电子（深圳）有限公司 版权所有 | 粤 ICP 备 91440300MAK64NHA3Q 号</p>
+        </div>
+    </div>
+</body>
+</html>

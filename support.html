@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术支持 - 日银微电子（深圳）有限公司</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #4A90D9;
+            --dark-blue: #1a3a5c;
+            --light-blue: #f0f8ff;
+            --accent-blue: #2E6CB5;
+            --white: #FFFFFF;
+            --gray-text: #333333;
+            --border-color: #d9e4f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--white);
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        /* Top Navigation Bar */
+        .navbar {
+            background: linear-gradient(180deg, #5FA4EB 0%, #4A90D9 100%);
+            padding: 0.8rem 3%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 3px solid var(--accent-blue);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.8rem 1.5rem;
+            display: block;
+            transition: background 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-menu li:not(:last-child) {
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Logo Area */
+        .logo-section {
+            background: var(--white);
+            padding: 1.5rem 3%;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo h1 {
+            color: var(--dark-blue);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo-subtitle {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Page Banner */
+        .page-banner {
+            background: linear-gradient(135deg, #6BB6FF 0%, #4A90D9 50%, #2E6CB5 100%);
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><circle cx="50" cy="50" r="20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.3;
+        }
+
+        .page-banner-content {
+            text-align: center;
+            z-index: 1;
+            color: var(--white);
+            padding: 20px;
+        }
+
+        .page-banner-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .page-banner-content p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Content Section */
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .content-section h2 {
+            color: var(--dark-blue);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-blue);
+        }
+
+        .content-section h3 {
+            color: var(--accent-blue);
+            font-size: 1.4rem;
+            margin: 25px 0 15px 0;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Support Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: var(--light-blue);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(74, 144, 217, 0.2);
+        }
+
+        .service-card h3 {
+            color: var(--accent-blue);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Download Section */
+        .download-list {
+            list-style: none;
+        }
+
+        .download-list li {
+            background: var(--light-blue);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .download-list li:hover {
+            background: #e3f0fa;
+        }
+
+        .download-list a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-list a:hover {
+            text-decoration: underline;
+        }
+
+        .download-tag {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: linear-gradient(135deg, #6BB6FF 0%, #4A90D9 100%);
+            border-radius: 10px;
+            padding: 30px;
+            color: var(--white);
+            margin-top: 30px;
+        }
+
+        .contact-box h3 {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            margin-bottom: 10px;
+        }
+
+        /* Back Link */
+        .back-link {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .back-link a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(180deg, #2c3e50 0%, #1a252f 100%);
+            color: var(--white);
+            padding: 40px 3% 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li><a href="index.html">返回首页</a></li>
+            <li><a href="products.html">产品中心</a></li>
+            <li><a href="news.html">新闻中心</a></li>
+            <li><a href="support.html">技术支持</a></li>
+            <li><a href="hr.html">人力资源</a></li>
+            <li><a href="sales.html">销售中心</a></li>
+            <li><a href="quality.html">质量保证</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- Logo Section -->
+    <div class="logo-section">
+        <div class="logo-container">
+            <div class="logo">
+                <h1>日银微电子（深圳）有限公司</h1>
+                <p class="logo-subtitle">专业模拟集成电路设计与制造商</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Banner -->
+    <div class="page-banner">
+        <div class="page-banner-content">
+            <h1>技术支持</h1>
+            <p>专业的技术团队，为您提供全方位的技术服务与解决方案</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Technical Support Overview -->
+        <div class="content-section">
+            <h2>技术支持服务</h2>
+            <p>日银微电子（深圳）有限公司拥有专业的技术支持团队，致力于为客户提供从产品选型、方案设计到应用调试的全流程技术支持。我们的技术工程师均具有多年的模拟电路设计与应用经验，能够快速响应客户需求，解决各类技术应用问题。</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>📋 产品选型支持</h3>
+                    <p>根据客户应用场景和需求，提供最优产品选型建议，包括性能参数对比、封装选择、成本优化等专业指导。</p>
+                </div>
+                <div class="service-card">
+                    <h3>🔧 方案设计支持</h3>
+                    <p>提供完整的参考设计方案，包括原理图、PCB 布局建议、BOM 清单等，帮助客户快速完成产品开发。</p>
+                </div>
+                <div class="service-card">
+                    <h3>🔍 应用调试支持</h3>
+                    <p>针对客户在产品开发过程中遇到的技术问题，提供远程或现场技术支持，协助解决各类应用难题。</p>
+                </div>
+                <div class="service-card">
+                    <h3>📚 技术培训服务</h3>
+                    <p>定期举办技术研讨会和产品培训课程，帮助客户工程师深入了解产品特性和应用技术。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download Resources -->
+        <div class="content-section">
+            <h2>资料下载</h2>
+            <p>提供各类产品技术文档和开发工具的下载资源，帮助您更高效地进行产品设计。</p>
+
+            <h3>产品文档</h3>
+            <ul class="download-list">
+                <li>
+                    <a href="#"><span>📄 电源管理 IC 产品选型指南 (2026 版)</span></a>
+                    <span class="download-tag">PDF</span>
+                </li>
+                <li>
+                    <a href="#"><span>📄 数据通讯接口电路产品手册</span></a>
+                    <span class="download-tag">PDF</span>
+                </li>
+                <li>
+                    <a href="#"><span>📄 音频功放产品应用笔记</span></a>
+                    <span class="download-tag">PDF</span>
+                </li>
+                <li>
+                    <a href="#"><span>📄 LED 驱动电路设计指南</span></a>
+                    <span class="download-tag">PDF</span>
+                </li>
+                <li>
+                    <a href="#"><span>📄 栅极驱动电路应用手册</span></a>
+                    <span class="download-tag">PDF</span>
+                </li>
+            </ul>
+
+            <h3>开发工具</h3>
+            <ul class="download-list">
+                <li>
+                    <a href="#"><span>🔧 PMIC 设计仿真工具 v3.2</span></a>
+                    <span class="download-tag">EXE</span>
+                </li>
+                <li>
+                    <a href="#"><span>🔧 PCB 布局参考设计库</span></a>
+                    <span class="download-tag">ZIP</span>
+                </li>
+                <li>
+                    <a href="#"><span>🔧 SPICE 模型库 (全系列产品)</span></a>
+                    <span class="download-tag">ZIP</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="content-section">
+            <h2>常见问题</h2>
+
+            <h3>电源管理 IC 相关问题</h3>
+            <p><strong>Q: 如何选择合适的 LDO 稳压器？</strong><br>
+            A: 选择 LDO 时需要考虑输入输出电压差、输出电流、静态电流、封装尺寸等参数。我们提供在线选型工具，可根据具体参数快速匹配合适的产品型号。</p>
+
+            <p><strong>Q: 开关电源转换器的效率如何优化？</strong><br>
+            A: 优化开关电源效率需要考虑开关频率、电感选择、PCB 布局等因素。我们的应用笔记 AN-001 详细介绍了效率优化方法。</p>
+
+            <h3>LED 驱动相关问题</h3>
+            <p><strong>Q: LED 驱动芯片出现闪烁问题如何处理？</strong><br>
+            A: LED 闪烁通常与输入电压波动、输出电容选择不当或 PCB 布局有关。建议检查输入滤波电容、优化 PCB 走线，并参考我们的设计指南。</p>
+        </div>
+
+        <!-- Contact Box -->
+        <div class="contact-box">
+            <h3>需要技术支持？</h3>
+            <p>如果您有任何技术问题或需要进一步的帮助，请随时联系我们的技术支持团队：</p>
+            <p><strong>技术支持热线：</strong>0755-82782695</p>
+            <p><strong>技术支持邮箱：</strong>support@ry-imp.com</p>
+            <p><strong>服务时间：</strong>周一至周五 9:00-18:00</p>
+        </div>
+
+        <!-- Back Link -->
+        <div class="back-link">
+            <a href="index.html">← 返回首页</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <p>地址：深圳市南山区粤海街道高新区社区粤兴三道 9 号华中科技大学深圳产学研基地大楼 A 座 1136</p>
+                <p>电话：0755-82782695</p>
+                <p>邮箱：info@ry-imp.com</p>
+                <p>统一社会信用代码：91440300MAK64NHA3Q</p>
+            </div>
+            <div class="footer-section">
+                <h4>产品中心</h4>
+                <p><a href="products.html">电源管理 IC</a></p>
+                <p><a href="products.html">数据通讯接口</a></p>
+                <p><a href="products.html">音频功放</a></p>
+                <p><a href="products.html">栅极驱动</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>关于我们</h4>
+                <p>日银微电子（深圳）有限公司是专业的模拟集成电路设计与制造商，专注于为客户提供高性能、低功耗的芯片产品与解决方案。</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 日银微电子（深圳）有限公司 版权所有 | 粤 ICP 备 91440300MAK64NHA3Q 号</p>
+        </div>
+    </div>
+</body>
+</html>
